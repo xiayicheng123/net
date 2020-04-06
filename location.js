@@ -1,4 +1,4 @@
-function location(file_link)
+function locat(file_link)
 {
   location = file_link;
 }
