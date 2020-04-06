@@ -21,7 +21,7 @@
 		 function b()
 		 {
 		let user = document.getElementById("user-lookfor").value;
-		let text = load("password\\"+user+".txt");
+		let text = load(user+"//password.txt");
 		if(document.getElementById("pwd").value=="")
 		{alert("请输入密码");return;}
 		if(text==" ")alert("error");
