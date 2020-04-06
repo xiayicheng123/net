@@ -21,10 +21,10 @@
 		 function b()
 		 {
 		let user = document.getElementById("user-lookfor").value;
-		let text = load("panyueyang.ml//user//"+user+"//password.txt");
+		let text = load("/user/"+user+"/password.txt");
 		if(document.getElementById("pwd").value=="")
 		{alert("请输入密码");return;}
-		if(text==" ")alert("error");
+		if(text=="")alert("error");
 		else if(text==document.getElementById("pwd").value)
 		alert("登陆成功");
 		else alert("密码错误");
