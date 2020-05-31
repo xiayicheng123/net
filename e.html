@@ -1,1 +1,24 @@
-
+<script>
+  function load(name) {
+		    let xhr = new XMLHttpRequest(),
+		        okStatus = document.location.protocol === "file:" ? 0 : 200;
+		    xhr.open('GET', name, false);
+		    xhr.overrideMimeType("text/html;charset=utf-8");//默认为utf-8
+			try{
+				xhr.send(null);
+			}catch(err){
+				alert(err);
+				return null;//TODO handle the exception
+			}
+			finally{
+		    return xhr.status === okStatus ? xhr.responseText : null;}
+		}
+ 
+function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+  
+  document.write(load(getQueryString("exam")));
+</script>
